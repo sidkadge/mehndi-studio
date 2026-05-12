@@ -1,124 +1,270 @@
-<nav
-  class="fixed top-4 left-1/2 -translate-x-1/2
-         w-[95%] z-50
-         bg-black/30 backdrop-blur-xl
-         border border-white/10
-         rounded-2xl shadow-2xl">
+<nav class="gmk-nav" id="gmk-nav">
 
-  <div
-    class="max-w-7xl mx-auto px-8 py-4
-           flex items-center justify-between">
+  <div class="nav-inner">
 
-    <!-- Logo Section -->
-    <div class="flex items-center gap-4">
-
-      <img
-        src="/logotwo.png"
-        alt="Gauries Mehndi Kala Logo"
-        class="h-20 w-20 rounded-full object-cover
-               border-2 border-[#FDC830]/40 shadow-xl" />
-
-      <div>
-
-        <h1
-          class="text-2xl font-bold text-[#FDC830]
-                 leading-none tracking-wide">
-
-          Gauries
-
-        </h1>
-
-        <p
-          class="text-xs tracking-[5px]
-                 text-white/70 uppercase mt-2">
-
-          Mehndi Kala
-
-        </p>
-
+    <!-- Logo -->
+    <a href="#home" class="nav-logo" onclick="this.closest('#gmk-nav').querySelector('.nav-mobile-menu').classList.remove('open')">
+      <img src="/logotwo.png" alt="Gauries Mehndi Kala" class="nav-logo-img"/>
+      <div class="nav-logo-text">
+        <span class="nav-brand">Gauries</span>
+        <span class="nav-tagline">Mehndi Kala</span>
       </div>
+    </a>
 
-    </div>
-
-    <!-- Menu -->
-    <ul
-      class="hidden md:flex items-center gap-10
-             text-white font-medium text-[17px]">
-
-      <li>
-        <a
-          href="#home"
-          class="hover:text-[#FDC830]
-                 transition-all duration-300">
-
-          Home
-
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#services"
-          class="hover:text-[#FDC830]
-                 transition-all duration-300">
-
-          Services
-
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#gallery"
-          class="hover:text-[#FDC830]
-                 transition-all duration-300">
-
-          Gallery
-
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#packages"
-          class="hover:text-[#FDC830]
-                 transition-all duration-300">
-
-          Packages
-
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#contact"
-          class="hover:text-[#FDC830]
-                 transition-all duration-300">
-
-          Contact
-
-        </a>
-      </li>
-
+    <!-- Desktop Menu -->
+    <ul class="nav-links">
+      <li><a href="#home"     class="nav-link">Home</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#gallery"  class="nav-link">Gallery</a></li>
+      <li><a href="#packages" class="nav-link">Packages</a></li>
+      <li><a href="#contact"  class="nav-link">Contact</a></li>
     </ul>
 
-    <!-- Button -->
-    <button
-      onclick="document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'})"
-      class="bg-[#FDC830]
-             text-black
-             px-6 py-3
-             rounded-xl
-             font-bold
-             hover:scale-105
-             hover:bg-yellow-300
-             transition-all duration-300
-             shadow-lg">
+    <!-- Desktop CTA -->
+    <button class="nav-cta" onclick="document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'})">
+      <span class="nav-cta-shimmer"></span>
+      <span class="nav-cta-text">
+        <i class="fas fa-calendar-alt"></i>
+        Book Now
+      </span>
+    </button>
 
-      Book Now
-
+    <!-- Hamburger (mobile) -->
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" onclick="
+      document.querySelector('.nav-mobile-menu').classList.toggle('open');
+      this.classList.toggle('active');
+    ">
+      <span></span><span></span><span></span>
     </button>
 
   </div>
 
+  <!-- Mobile Menu -->
+  <div class="nav-mobile-menu">
+    <ul>
+      <li><a href="#home"     onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="#gallery"  onclick="closeMobileMenu()">Gallery</a></li>
+      <li><a href="#packages" onclick="closeMobileMenu()">Packages</a></li>
+      <li><a href="#contact"  onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+    <button class="mobile-cta" onclick="document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'}); closeMobileMenu()">
+      <i class="fas fa-calendar-alt"></i>
+      Book Appointment
+    </button>
+  </div>
+
 </nav>
+
+<script>
+function closeMobileMenu() {
+  document.querySelector('.nav-mobile-menu').classList.remove('open');
+  document.getElementById('nav-hamburger').classList.remove('active');
+}
+
+// Scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('gmk-nav');
+  if(window.scrollY > 60) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap');
+
+.gmk-nav {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94%;
+  max-width: 1300px;
+  z-index: 9999;
+  background: rgba(13,1,24,0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(253,200,48,0.12);
+  border-radius: 20px;
+  transition: background 0.4s, box-shadow 0.4s, border-color 0.4s;
+  overflow: hidden;
+}
+.gmk-nav.scrolled {
+  background: rgba(13,1,24,0.9);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  border-color: rgba(253,200,48,0.2);
+}
+
+/* Inner */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  gap: 16px;
+}
+
+/* Logo */
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+.nav-logo-img {
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(253,200,48,0.35);
+  box-shadow: 0 0 16px rgba(253,200,48,0.2);
+  transition: box-shadow 0.3s;
+}
+.nav-logo:hover .nav-logo-img { box-shadow: 0 0 24px rgba(253,200,48,0.4); }
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FDC830;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.nav-tagline {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: 3px;
+}
+
+/* Desktop links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.nav-link {
+  display: block;
+  padding: 8px 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  border-radius: 100px;
+  transition: color 0.3s, background 0.3s;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 50%; right: 50%;
+  height: 1px;
+  background: #FDC830;
+  transition: left 0.3s, right 0.3s;
+}
+.nav-link:hover { color: #FDC830; }
+.nav-link:hover::after { left: 16px; right: 16px; }
+
+/* CTA */
+.nav-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #FDC830, #FF8C00);
+  border: none;
+  border-radius: 100px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0d0118;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(253,200,48,0.3);
+}
+.nav-cta:hover { transform: scale(1.05); box-shadow: 0 8px 28px rgba(253,200,48,0.5); }
+.nav-cta-shimmer {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s ease infinite;
+}
+@keyframes shimmer { to { background-position: -200% center; } }
+.nav-cta-text { position: relative; z-index: 1; display: flex; align-items: center; gap: 7px; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: #FDC830;
+  border-radius: 2px;
+  transition: all 0.3s;
+  transform-origin: center;
+}
+.nav-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile Menu */
+.nav-mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  border-top: 1px solid rgba(253,200,48,0.1);
+}
+.nav-mobile-menu.open {
+  max-height: 400px;
+  padding: 12px 24px 20px;
+}
+.nav-mobile-menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.nav-mobile-menu a {
+  display: block;
+  padding: 12px 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background 0.3s, color 0.3s;
+}
+.nav-mobile-menu a:hover { background: rgba(253,200,48,0.08); color: #FDC830; }
+.mobile-cta {
+  margin-top: 12px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #FDC830, #FF8C00);
+  border: none;
+  border-radius: 14px;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d0118;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile-menu { display: flex; }
+}
+</style>

@@ -9,7 +9,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./contact.css']
 })
 export class Contact {
-  sendWhatsApp() {
-    window.open('https://wa.me/917588525387?text=Hello!%20I%20am%20interested%20in%20your%20Mehndi%20services.', '_blank');
+  sendWhatsApp(packageName?: string, price?: string, details?: string) {
+    const message = packageName
+      ? `Hello! I would like to book the ${packageName} package (${price}). Details: ${details}`
+      : 'Hello! I would like to inquire about your mehndi services.';
+
+    if (typeof window !== 'undefined') {
+      window.open(
+        `https://wa.me/917588525387?text=${encodeURIComponent(message)}`,
+        '_blank'
+      );
+    }
   }
 }

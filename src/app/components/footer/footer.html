@@ -1,13 +1,229 @@
-<footer class="bg-black/90 text-gray-300 py-8 border-t border-gray-800">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-    <div class="flex items-center gap-2">
-      <i class="fas fa-feather-alt text-[#FDC830]"></i>
-      <p class="text-sm">© 2025 Gauries mehndi kala | Timeless Henna Art</p>
+<footer class="site-footer">
+
+  <!-- Henna wave top -->
+  <div class="footer-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 Q180,0 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z"
+            fill="#0d0118" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <div class="footer-container">
+
+    <!-- Top: brand + links + social -->
+    <div class="footer-top">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="/logotwo.png" alt="Gauries Mehndi Kala" class="footer-logo"/>
+        <div>
+          <h3 class="footer-brand-name">Gauries</h3>
+          <p class="footer-brand-tagline">Mehndi Kala</p>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <nav class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Social -->
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-btn" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="social-btn" aria-label="Pinterest">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+        <a href="https://wa.me/917588525387" class="social-btn social-wa" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+
     </div>
-    <div class="flex gap-6 text-xl">
-      <i class="fab fa-instagram hover:text-[#FDC830] cursor-pointer"></i>
-      <i class="fab fa-facebook hover:text-[#FDC830] cursor-pointer"></i>
-      <i class="fab fa-pinterest hover:text-[#FDC830] cursor-pointer"></i>
+
+    <!-- Divider -->
+    <div class="footer-divider">
+      <span class="fd-line"></span>
+      <span class="fd-diamond">◆</span>
+      <span class="fd-line"></span>
     </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2025 <span class="copy-brand">Gauries Mehndi Kala</span> · Timeless Henna Art
+      </p>
+      <p class="footer-love">
+        Made with <span class="heart">♥</span> for every celebration
+      </p>
+    </div>
+
   </div>
 </footer>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;400&display=swap');
+
+.site-footer {
+  position: relative;
+  background: linear-gradient(180deg, #0d0118 0%, #060010 100%);
+  color: rgba(255,255,255,0.5);
+  font-family: 'Cormorant Garamond', serif;
+  overflow: hidden;
+}
+.site-footer::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(253,200,48,0.3), transparent);
+}
+
+/* Wave */
+.footer-wave {
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 80px;
+  pointer-events: none;
+}
+.footer-wave svg { width: 100%; height: 100%; }
+
+/* Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top row */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+/* Brand */
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-logo {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(253,200,48,0.3);
+  box-shadow: 0 0 16px rgba(253,200,48,0.15);
+}
+.footer-brand-name {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FDC830;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.footer-brand-tagline {
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0; right: 0;
+  height: 1px;
+  background: #FDC830;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: right;
+}
+.footer-links a:hover { color: #FDC830; }
+.footer-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Social */
+.footer-social { display: flex; gap: 10px; }
+.social-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(253,200,48,0.2);
+  background: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.social-btn:hover {
+  background: rgba(253,200,48,0.1);
+  border-color: #FDC830;
+  color: #FDC830;
+  transform: translateY(-3px);
+}
+.social-wa:hover {
+  background: rgba(37,211,102,0.1);
+  border-color: #25D366;
+  color: #25D366;
+}
+
+/* Divider */
+.footer-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.fd-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(253,200,48,0.2), transparent);
+}
+.fd-diamond { color: rgba(253,200,48,0.4); font-size: 10px; }
+
+/* Bottom */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy { font-size: 14px; color: rgba(255,255,255,0.3); }
+.copy-brand { color: rgba(253,200,48,0.6); }
+.footer-love { font-size: 13px; font-style: italic; color: rgba(255,255,255,0.2); }
+.heart {
+  color: #e85d8a;
+  display: inline-block;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50%      { transform: scale(1.3); }
+}
+</style>

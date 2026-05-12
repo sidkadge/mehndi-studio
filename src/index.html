@@ -2,15 +2,198 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Gauries mehndi kala</title>
+  <title>Gauries Mehndi Kala</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Loader Overlay ── */
+    #gmk-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #gmk-loader.hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Decorative mehndi circle */
+    .loader-ornament {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #FDC830;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .loader-ornament::before,
+    .loader-ornament::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(253, 200, 48, 0.35);
+    }
+    .loader-ornament::before { inset: 8px; }
+    .loader-ornament::after  { inset: 16px; border-style: dashed; }
+
+    .loader-ornament-inner {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(253,200,48,0.4);
+      box-shadow: 0 0 16px rgba(253,200,48,0.35);
+    }
+
+    @keyframes rotateSlow {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Typing text */
+    .loader-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 700;
+      color: #FDC830;
+      letter-spacing: 4px;
+      text-shadow: 0 0 30px rgba(253, 200, 48, 0.4);
+      min-height: 1.2em;
+      text-align: center;
+    }
+
+    .loader-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(11px, 2.5vw, 15px);
+      letter-spacing: 10px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .loader-subtitle.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Blinking cursor */
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background: #FDC830;
+      margin-left: 3px;
+      vertical-align: text-bottom;
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* Progress bar */
+    .loader-bar-wrap {
+      width: clamp(180px, 40vw, 300px);
+      height: 2px;
+      background: rgba(253,200,48,0.15);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .loader-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #FDC830, #f59e0b);
+      border-radius: 99px;
+      transition: width 0.15s ease;
+      box-shadow: 0 0 8px rgba(253,200,48,0.7);
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
-</body>
 
+  <!-- ══ LOADER ══ -->
+  <div id="gmk-loader">
+    <div class="loader-ornament">
+      <img src="/logotwo.png" alt="Gauries Mehndi Kala" class="loader-ornament-inner" />
+    </div>
+    <div class="loader-title" id="loader-text"><span class="cursor"></span></div>
+    <div class="loader-subtitle" id="loader-sub">Mehndi Kala Studio</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- ══ ANGULAR APP ══ -->
+  <app-root></app-root>
+
+  <script>
+    (function () {
+      const fullText   = 'Gauries';           // first line typed
+      const textEl     = document.getElementById('loader-text');
+      const subEl      = document.getElementById('loader-sub');
+      const barEl      = document.getElementById('loader-bar');
+      const loaderEl   = document.getElementById('gmk-loader');
+      const typingSpeed = 90;   // ms per character
+      let   charIndex  = 0;
+
+      /* ── Type character by character ── */
+      function typeChar() {
+        if (charIndex < fullText.length) {
+          // Insert character before the cursor span
+          const cursor = textEl.querySelector('.cursor');
+          const txt    = document.createTextNode(fullText[charIndex]);
+          textEl.insertBefore(txt, cursor);
+          charIndex++;
+
+          // Advance progress bar proportionally during typing phase (0 → 60%)
+          barEl.style.width = (charIndex / fullText.length * 60) + '%';
+
+          setTimeout(typeChar, typingSpeed);
+        } else {
+          // Typing done → show subtitle
+          subEl.classList.add('show');
+
+          // Fill bar to 100% over 600 ms
+          barEl.style.transition = 'width 0.6s ease';
+          barEl.style.width = '100%';
+
+          // Hide loader after bar fills + brief pause
+          setTimeout(hideLoader, 900);
+        }
+      }
+
+      function hideLoader() {
+        loaderEl.classList.add('hide');
+        // Remove from DOM after transition
+        setTimeout(() => loaderEl.remove(), 700);
+      }
+
+      // Small initial delay so the ornament is visible before typing starts
+      setTimeout(typeChar, 400);
+    })();
+  </script>
+
+</body>
 </html>

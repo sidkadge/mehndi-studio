@@ -1,23 +1,83 @@
-<section id="home"
-  class="min-h-screen bg-cover bg-center flex items-start justify-end text-right relative px-10 pt-40"
-  style="background-image:url('/bannerimg.png');">
+<section id="home" class="hero-section">
 
-  <div class="absolute inset-0 bg-black/40"></div>
+  <!-- Background image overlay -->
+  <div class="hero-bg"></div>
 
-  <div class="relative bg-black/60 backdrop-blur-md p-10 rounded-2xl text-white max-w-2xl shadow-2xl border border-white/20">
+  <!-- Animated vignette -->
+  <div class="hero-vignette"></div>
 
-    <p class="text-lg mb-6 font-bold text-[#FDC830] tracking-wide">
-      Bridal • Party • Engagement • Traditional Designs
-    </p>
-
-    <button 
-      onclick="document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'})"
-      class="bg-[#FDC830] text-black px-8 py-3 rounded-lg font-bold shadow-lg hover:scale-105 transition-all duration-200">
-
-      Book Appointment →
-
-    </button>
-
+  <!-- Floating henna petals with rich animations -->
+  <div class="hero-petals">
+    <div class="petal petal-1">🌸</div>
+    <div class="petal petal-2">🌺</div>
+    <div class="petal petal-3">🌼</div>
+    <div class="petal petal-4">🌸</div>
+    <div class="petal petal-5">✨</div>
+    <div class="petal petal-6">🌺</div>
+    <div class="petal petal-7">🪔</div>
+    <div class="petal petal-8">🌿</div>
   </div>
 
+  <!-- Hero content card - COMPACT SIZE -->
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Available for Bookings
+      <span class="hero-badge-dot"></span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-title-sub">The Art of</span>
+      <span class="hero-title-main">Henna</span>
+      <span class="hero-title-accent">& Beauty</span>
+    </h1>
+
+    <div class="hero-tags">
+      <span class="hero-tag">Bridal</span>
+      <span class="hero-tag-dot">◆</span>
+      <span class="hero-tag">Party</span>
+      <span class="hero-tag-dot">◆</span>
+      <span class="hero-tag">Engagement</span>
+      <span class="hero-tag-dot">◆</span>
+      <span class="hero-tag">Traditional</span>
+    </div>
+
+    <p class="hero-desc">
+      Intricate designs crafted with passion — where every line tells a story of love, culture, and timeless artistry.
+    </p>
+
+    <div class="hero-actions">
+      <button class="hero-btn-primary"
+              onclick="document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'})">
+        <span class="btn-shimmer"></span>
+        <span class="btn-content">
+          <i class="fas fa-calendar-alt"></i>
+          Book Appointment
+        </span>
+      </button>
+      <button class="hero-btn-secondary"
+              onclick="document.querySelector('#gallery')?.scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-images"></i>
+        View Gallery
+      </button>
+    </div>
+
+    <!-- Trust indicators -->
+    <div class="hero-trust">
+      <div class="trust-item">
+        <i class="fas fa-star"></i>
+        <span>5.0 Rating</span>
+      </div>
+      <div class="trust-dot">·</div>
+      <div class="trust-item">
+        <i class="fas fa-users"></i>
+        <span>500+ Happy Clients</span>
+      </div>
+      <div class="trust-dot">·</div>
+      <div class="trust-item">
+        <i class="fas fa-home"></i>
+        <span>Home Service</span>
+      </div>
+    </div>
+  </div>
 </section>

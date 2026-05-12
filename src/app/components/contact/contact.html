@@ -1,12 +1,147 @@
-<section id="contact" class="py-20 bg-[#1A0826] text-white">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-extrabold mb-4 text-[#FDC830]">Let's Create Magic ✨</h2>
-    <p class="text-gray-300 mb-8 text-lg">Click below to chat with us on WhatsApp</p>
-    <button (click)="sendWhatsApp()" 
-            class="bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-xl hover:scale-105 transition-all duration-200 shadow-lg flex items-center gap-3 mx-auto">
-      <i class="fab fa-whatsapp text-2xl"></i>
-      Chat on WhatsApp
-    </button>
-    <p class="text-gray-400 mt-6">Or call us at: +91 75885 25387</p>
+<section id="contact" class="contact-section">
+
+  <!-- Mandala Background (matching packages & testimonials) -->
+  <div class="contact-mandala-bg">
+    <svg class="contact-mandala contact-mandala-1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(200,200)">
+        <circle r="180" fill="none" stroke="#FDC830" stroke-width="0.5" opacity="0.3"/>
+        <circle r="140" fill="none" stroke="#FDC830" stroke-width="0.5" opacity="0.2" stroke-dasharray="8 4"/>
+        <circle r="100" fill="none" stroke="#FF8C00" stroke-width="0.5" opacity="0.2"/>
+        <circle r="60" fill="none" stroke="#FDC830" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+        <g class="petals">
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(0)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(45)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(90)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(135)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(180)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(225)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(270)"/>
+          <ellipse rx="18" ry="70" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.25" transform="rotate(315)"/>
+        </g>
+        <circle r="20" fill="none" stroke="#FDC830" stroke-width="1.5" opacity="0.5"/>
+        <circle r="6" fill="#FDC830" opacity="0.4"/>
+      </g>
+    </svg>
+    <svg class="contact-mandala contact-mandala-2" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(200,200)">
+        <circle r="180" fill="none" stroke="#FF8C00" stroke-width="0.5" opacity="0.2"/>
+        <circle r="120" fill="none" stroke="#FDC830" stroke-width="0.5" opacity="0.15" stroke-dasharray="6 3"/>
+        <g>
+          <path d="M0,-160 Q20,-80 0,-20 Q-20,-80 0,-160" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.2" transform="rotate(0)"/>
+          <path d="M0,-160 Q20,-80 0,-20 Q-20,-80 0,-160" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.2" transform="rotate(60)"/>
+          <path d="M0,-160 Q20,-80 0,-20 Q-20,-80 0,-160" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.2" transform="rotate(120)"/>
+          <path d="M0,-160 Q20,-80 0,-20 Q-20,-80 0,-160" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.2" transform="rotate(180)"/>
+          <path d="M0,-160 Q20,-80 0,-20 Q-20,-80 0,-160" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.2" transform="rotate(240)"/>
+          <path d="M0,-160 Q20,-80 0,-20 Q-20,-80 0,-160" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.2" transform="rotate(300)"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Floating Particles (matching packages) -->
+  <div class="contact-particles">
+    <span class="particle"></span><span class="particle"></span><span class="particle"></span>
+    <span class="particle"></span><span class="particle"></span><span class="particle"></span>
+    <span class="particle"></span><span class="particle"></span>
+  </div>
+
+  <div class="contact-container">
+
+    <!-- Header (matching packages style) -->
+    <div class="contact-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        Get In Touch
+        <span class="badge-dot"></span>
+      </div>
+      <h2 class="contact-title">
+        <span class="title-line">Let's Create</span>
+        <span class="title-line golden">Magic</span>
+      </h2>
+      <div class="title-ornament">
+        <span class="orn-line"></span>
+        <span class="orn-diamond">◆</span>
+        <span class="orn-line"></span>
+      </div>
+      <p class="contact-subtitle">
+        One message away from the most beautiful mehndi of your life
+      </p>
+    </div>
+
+    <!-- Main Contact Card -->
+    <div class="contact-card">
+
+      <!-- Left: Contact Info -->
+      <div class="contact-info">
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <div class="info-label">Call Us</div>
+            <div class="info-value">+91 75885 25387</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="info-label">WhatsApp</div>
+            <div class="info-value">Available 9 AM – 9 PM</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="info-label">Service Area</div>
+            <div class="info-value">Nanded & Surrounding</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-home"></i></div>
+          <div>
+            <div class="info-label">Home Service</div>
+            <div class="info-value">Available on Request</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: CTA Section -->
+      <div class="contact-cta-wrap">
+        <div class="cta-ornament">
+          <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#FDC830" stroke-width="0.8" opacity="0.2" stroke-dasharray="5 4"/>
+            <circle cx="80" cy="80" r="55" fill="none" stroke="#FDC830" stroke-width="0.5" opacity="0.15"/>
+            <circle cx="80" cy="80" r="40" fill="none" stroke="#FF8C00" stroke-width="0.5" opacity="0.15"/>
+          </svg>
+          <i class="fab fa-whatsapp cta-wa-icon"></i>
+        </div>
+
+        <button class="wa-btn" (click)="sendWhatsApp()">
+          <span class="btn-shimmer"></span>
+          <span class="btn-content">
+            <i class="fab fa-whatsapp"></i>
+            Chat on WhatsApp
+          </span>
+        </button>
+
+        <div class="cta-divider">
+          <span></span>
+          <span class="or-text">or</span>
+          <span></span>
+        </div>
+
+        <a href="tel:+917588525387" class="call-btn">
+          <i class="fas fa-phone-alt"></i>
+          Call Now
+        </a>
+
+        <p class="free-note">
+          <i class="fas fa-check-circle"></i>
+          Free consultation &nbsp;·&nbsp;
+          <i class="fas fa-check-circle"></i>
+          Home service available
+        </p>
+      </div>
+
+    </div>
+
   </div>
 </section>

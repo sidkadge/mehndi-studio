@@ -1,121 +1,154 @@
-<section id="gallery" class="gallery-section">
+<section id="gallery" class="gal-section">
 
-  <div class="gallery-container">
+  <!-- Animated mandala background -->
+  <div class="gal-mandala-wrap">
+    <svg class="gal-mandala" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(250,250)">
+        <circle r="230" fill="none" stroke="#FDC830" stroke-width="0.5" opacity="0.12" stroke-dasharray="8 5"/>
+        <circle r="190" fill="none" stroke="#FF8C00" stroke-width="0.4" opacity="0.1"/>
+        <circle r="150" fill="none" stroke="#FDC830" stroke-width="0.5" opacity="0.1" stroke-dasharray="4 3"/>
+        <circle r="110" fill="none" stroke="#FDC830" stroke-width="0.4" opacity="0.08"/>
+        <g>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(0)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(30)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(60)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(90)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(120)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(150)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(180)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(210)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(240)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(270)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(300)"/>
+          <ellipse rx="22" ry="100" fill="none" stroke="#FDC830" stroke-width="0.6" opacity="0.12" transform="rotate(330)"/>
+        </g>
+        <circle r="25" fill="none" stroke="#FDC830" stroke-width="1" opacity="0.3"/>
+        <circle r="8"  fill="#FDC830" opacity="0.2"/>
+      </g>
+    </svg>
+  </div>
 
-    <!-- Heading -->
-    <div class="gallery-header">
+  <!-- Floating sparks -->
+  <div class="gal-sparks">
+    <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+    <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+    <span class="spark"></span><span class="spark"></span><span class="spark"></span>
+  </div>
 
-      <h2>
-        Our <span>Art Gallery</span>
+  <!-- Edge fade masks -->
+  <div class="gal-fade-left"></div>
+  <div class="gal-fade-right"></div>
+
+  <div class="gal-container">
+
+    <!-- ── Header ── -->
+    <div class="gal-header">
+      <div class="gal-badge">
+        <span class="gal-badge-dot"></span>
+        Henna Portfolio
+        <span class="gal-badge-dot"></span>
+      </div>
+
+      <h2 class="gal-title">
+        <span class="gal-title-line">Our</span>
+        <span class="gal-title-line gal-golden">Art Gallery</span>
       </h2>
 
-      <p>
+      <div class="gal-ornament">
+        <span class="gal-orn-line"></span>
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <path d="M10 1 L12 7 L19 7 L13.5 11 L15.5 18 L10 14 L4.5 18 L6.5 11 L1 7 L8 7 Z"
+                fill="#FDC830" opacity="0.6"/>
+        </svg>
+        <span class="gal-orn-line"></span>
+      </div>
+
+      <p class="gal-subtitle">
         Witness the elegance of intricate henna designs crafted with passion
       </p>
-
     </div>
 
-    <!-- Slider -->
-    <div class="slider">
+    <!-- ── Row 1: Left to Right ── -->
+    <div class="gal-slider-wrap">
+      <div class="gal-track gal-track-ltr">
 
-      <div class="slide-track">
-
-        <!-- Image 1 -->
-        <div class="slide">
-          <img src="/Bridal_Elegance.png" alt="Bridal Mehndi Design" />
-          <div class="slide-content">
-            <p>✨ Bridal Elegance</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Bridal_Elegance.png"  alt="Bridal Elegance"/><div class="gal-overlay"><span>✨ Bridal Elegance</span></div></div>
+          <div class="gal-label">✨ Bridal Elegance</div>
         </div>
 
-        <!-- Image 2 -->
-        <div class="slide">
-          <img src="/Party_Glow.png" alt="Party Mehndi" />
-          <div class="slide-content">
-            <p>🎉 Party Glow</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Party_Glow.png"       alt="Party Glow"/><div class="gal-overlay"><span>🎉 Party Glow</span></div></div>
+          <div class="gal-label">🎉 Party Glow</div>
         </div>
 
-        <!-- Image 3 -->
-        <div class="slide">
-          <img src="/Engagement_Love.png" alt="Engagement Mehndi" />
-          <div class="slide-content">
-            <p>💍 Engagement Love</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Engagement_Love.png"  alt="Engagement Love"/><div class="gal-overlay"><span>💍 Engagement Love</span></div></div>
+          <div class="gal-label">💍 Engagement Love</div>
         </div>
 
-        <!-- Image 4 -->
-        <div class="slide">
-          <img src="/Traditional_Roots.png" alt="Traditional Mehndi" />
-          <div class="slide-content">
-            <p>🕌 Traditional Roots</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Traditional_Roots.png" alt="Traditional Roots"/><div class="gal-overlay"><span>🕌 Traditional Roots</span></div></div>
+          <div class="gal-label">🕌 Traditional Roots</div>
         </div>
 
-        <!-- Image 5 -->
-        <div class="slide">
-          <img src="/Arabic_Flora.png" alt="Arabic Mehndi" />
-          <div class="slide-content">
-            <p>🌿 Arabic Flora</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Arabic_Flora.png"     alt="Arabic Flora"/><div class="gal-overlay"><span>🌿 Arabic Flora</span></div></div>
+          <div class="gal-label">🌿 Arabic Flora</div>
         </div>
 
-        <!-- Image 6 -->
-        <div class="slide">
-          <img src="/Royal_Signature.png" alt="Royal Mehndi" />
-          <div class="slide-content">
-            <p>👑 Royal Signature</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Royal_Signature.png"  alt="Royal Signature"/><div class="gal-overlay"><span>👑 Royal Signature</span></div></div>
+          <div class="gal-label">👑 Royal Signature</div>
         </div>
 
-        <!-- Duplicate Images for Infinite Scroll -->
-
-        <div class="slide">
-          <img src="/Bridal_Elegance.png" alt="Bridal Mehndi Design" />
-          <div class="slide-content">
-            <p>✨ Bridal Elegance</p>
-          </div>
+        <!-- Duplicates for infinite loop -->
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Bridal_Elegance.png"  alt="Bridal Elegance"/><div class="gal-overlay"><span>✨ Bridal Elegance</span></div></div>
+          <div class="gal-label">✨ Bridal Elegance</div>
         </div>
 
-        <div class="slide">
-          <img src="/Party_Glow.png" alt="Party Mehndi" />
-          <div class="slide-content">
-            <p>🎉 Party Glow</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Party_Glow.png"       alt="Party Glow"/><div class="gal-overlay"><span>🎉 Party Glow</span></div></div>
+          <div class="gal-label">🎉 Party Glow</div>
         </div>
 
-        <div class="slide">
-          <img src="/Engagement_Love.png" alt="Engagement Mehndi" />
-          <div class="slide-content">
-            <p>💍 Engagement Love</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Engagement_Love.png"  alt="Engagement Love"/><div class="gal-overlay"><span>💍 Engagement Love</span></div></div>
+          <div class="gal-label">💍 Engagement Love</div>
         </div>
 
-        <div class="slide">
-          <img src="/Traditional_Roots.png" alt="Traditional Mehndi" />
-          <div class="slide-content">
-            <p>🕌 Traditional Roots</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Traditional_Roots.png" alt="Traditional Roots"/><div class="gal-overlay"><span>🕌 Traditional Roots</span></div></div>
+          <div class="gal-label">🕌 Traditional Roots</div>
         </div>
 
-        <div class="slide">
-          <img src="/Arabic_Flora.png" alt="Arabic Mehndi" />
-          <div class="slide-content">
-            <p>🌿 Arabic Flora</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Arabic_Flora.png"     alt="Arabic Flora"/><div class="gal-overlay"><span>🌿 Arabic Flora</span></div></div>
+          <div class="gal-label">🌿 Arabic Flora</div>
         </div>
 
-        <div class="slide">
-          <img src="/Royal_Signature.png" alt="Royal Mehndi" />
-          <div class="slide-content">
-            <p>👑 Royal Signature</p>
-          </div>
+        <div class="gal-slide">
+          <div class="gal-img-wrap"><img src="/Royal_Signature.png"  alt="Royal Signature"/><div class="gal-overlay"><span>👑 Royal Signature</span></div></div>
+          <div class="gal-label">👑 Royal Signature</div>
         </div>
 
       </div>
+    </div>
 
+
+
+    <!-- ── View All CTA ── -->
+    <div class="gal-cta">
+      <button class="gal-cta-btn" onclick="document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'})">
+        <span class="gal-cta-shimmer"></span>
+        <span class="gal-cta-content">
+          <i class="fas fa-images"></i>
+          Book Your Design Session
+        </span>
+      </button>
     </div>
 
   </div>
-
 </section>
+
