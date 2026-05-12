@@ -32,6 +32,8 @@ import {
   TemplateRef,
   Version,
   ViewContainerRef,
+  __spreadProps,
+  __spreadValues,
   booleanAttribute,
   createNgModule,
   findLocaleData,
@@ -60,11 +62,7 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-ZJLVPU6U.js";
-import {
-  __spreadProps,
-  __spreadValues
-} from "./chunk-JDM4H6TH.js";
+} from "./chunk-ZBUEH6HV.js";
 
 // node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
 var _DOM = null;
@@ -4799,4 +4797,4 @@ export {
   PRECONNECT_CHECK_BLOCKLIST,
   NgOptimizedImage
 };
-//# sourceMappingURL=chunk-I7JBHERG.js.map
+//# sourceMappingURL=chunk-RB3M2OBE.js.map
