@@ -16,7 +16,7 @@ import { Footer } from './components/footer/footer';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
+    
     FormsModule,
     Navbar,
     Hero,
